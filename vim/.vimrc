@@ -166,8 +166,8 @@ if executable('ag')
   set grepprg=ag\ -p\ ./\ -i\ --nogroup\ --nocolor\ --hidden
   " let g:ctrlp_user_command = 'ag -l -i --nocolor --hidden -g "" %s'
   let g:ctrlp_user_command = 'ag -p "." -l -i --nocolor --hidden -g "." %s'
-  let g:ctrlspace_glob_command = 'ag -p "." -l -i --nocolor --hidden -g ""'
-  let g:agprg="ag -p ./ -i --column --hidden"
+  let g:CtrlSpaceGlobCommand = 'ag -p "." -l -i --nocolor --hidden -g ""'
+  let g:ag_prg="ag -p ./ -i --column --hidden"
 endif
 
 " EasyMotion
@@ -182,8 +182,8 @@ endif
 " " nmap s <Plug>(easymotion-s)
 
 " ctrlspace
-let g:ctrlspace_set_default_mapping = 1
-let g:ctrlspace_default_mapping_key = '<Tab>'
+let g:CtrlSpaceSetDefaultMapping = 1
+let g:CtrlSpaceDefaultMappingKey = '<Tab>'
 
 " Syntastic
 " set statusline+=%#warningmsg#
