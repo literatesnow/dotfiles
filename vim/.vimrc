@@ -72,6 +72,7 @@ set guioptions-=L
 set expandtab
 set ts=2
 set shiftwidth=2
+set relativenumber
 set browsedir=buffer
 set su=.bak,~,.o,.h,.info,.swp,.obj,.class
 
