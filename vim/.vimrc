@@ -20,7 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 " Bundle 'Lokaltog/vim-easymotion'
 Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'tpope/vim-commentary'
+" Bundle 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,9 +81,10 @@ set laststatus=2
 set foldmethod=marker
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set sm
-set si
-" set ai
+" set smartindent
+set autoindent
 set hls
+set incsearch
 set ic
 set spell
 set number
@@ -164,11 +165,10 @@ let g:ctrlp_cache_dir = $HOME . "/.cache/ctrlp"
 
 " ctrlp ctrlspace ag.vim
 if executable('ag')
-  set grepprg=ag\ -p\ ./\ -i\ --nogroup\ --nocolor\ --hidden
-  " let g:ctrlp_user_command = 'ag -l -i --nocolor --hidden -g "" %s'
-  let g:ctrlp_user_command = 'ag -p "." -l -i --nocolor --hidden -g "." %s'
-  let g:CtrlSpaceGlobCommand = 'ag -p "." -l -i --nocolor --hidden -g ""'
-  let g:ag_prg="ag -p ./ -i --column --hidden"
+  set grepprg=ag\ -p\ ~/.agignore\ -i\ --nogroup\ --nocolor\ --hidden
+  let g:ctrlp_user_command = 'ag -p "~/.agignore" -l -i --nocolor --hidden -g "." %s'
+  let g:CtrlSpaceGlobCommand = 'ag -p "~/.agignore" -l -i --nocolor --hidden -g ""'
+  let g:ag_prg='ag -p "~/.agignore" -i --column --hidden'
 endif
 
 " EasyMotion
@@ -187,12 +187,14 @@ let g:CtrlSpaceSetDefaultMapping = 1
 let g:CtrlSpaceDefaultMappingKey = '<Tab>'
 
 " Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
