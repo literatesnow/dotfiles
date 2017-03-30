@@ -1,0 +1,12 @@
+.git/*
+dist/*
+cache/*
+.cache/*
+vendor/*
+node_modules/*
+bower_components/*
+.vagrant/*
+.cs_files
+*.svg
+svg-*.html
+*.min.js
