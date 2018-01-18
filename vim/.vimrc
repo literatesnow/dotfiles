@@ -15,6 +15,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 
 Bundle 'https://github.com/vim-scripts/doriath.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'https://github.com/kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -30,10 +31,11 @@ filetype plugin indent on
 syntax on
 
 if has("gui_running")
-  if has("gui_gtk2")
-    colorscheme rainbow_breeze
+  if has("gui_gtk2") || has("gui_gtk3")
+    set background=dark
+    colorscheme solarized
     " set guifont=Inconsolata\ 10
-    set guifont=Consolas\ 10
+    set guifont=Consolas\ 12
     set clipboard=unnamedplus
     set guiheadroom=0
     set linespace=3
@@ -61,6 +63,7 @@ else
   set ttyscroll=3
   set lazyredraw
   set clipboard=unnamed,unnamedplus
+  hi SpellBad cterm=underline
 endif
 
 set synmaxcol=512
