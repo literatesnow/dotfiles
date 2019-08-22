@@ -66,6 +66,8 @@ else
   hi SpellBad cterm=underline
 endif
 
+set modelines=0
+set nomodeline
 set synmaxcol=512
 set mouse+=a
 set guioptions-=m
@@ -75,7 +77,7 @@ set guioptions-=L
 set expandtab
 set ts=2
 set shiftwidth=2
-set relativenumber
+" set relativenumber
 set browsedir=buffer
 set su=.bak,~,.o,.h,.info,.swp,.obj,.class
 
